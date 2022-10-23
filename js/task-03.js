@@ -27,14 +27,22 @@ const images = [
 
 const addList = document.querySelector(`.gallery`);
 
-for (let element of images) {
-  
-  const listItem = document.createElement(`li`);
-  const elementImg = document.createElement(`img`);
-  elementImg.setAttribute(`src`, element.url);
-  elementImg.setAttribute(`alt`, element.alt);
-  elementImg.classList.add(`gallery__img`);
-  listItem.appendChild(elementImg);
-  console.log(listItem);
-  addList.appendChild(listItem);
-}
+  // перший метод:
+
+// for (let element of images) {
+//   const listItem = document.createElement(`li`);
+//   const elementImg = document.createElement(`img`);
+//   elementImg.setAttribute(`src`, element.url);
+//   elementImg.setAttribute(`alt`, element.alt);
+//   elementImg.classList.add(`gallery__img`);
+//   listItem.appendChild(elementImg);
+//   console.log(listItem);
+//   addList.appendChild(listItem);
+// }
+
+
+  // другий метод:
+  const listItem = images.map(({ url, alt }) => `<li><img src="${url}" alt="${alt}" class="gallery__img" ></li>`).join("");
+console.log(listItem);
+addList.insertAdjacentHTML(`beforeend`, listItem);
+
