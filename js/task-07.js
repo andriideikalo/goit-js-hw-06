@@ -5,12 +5,12 @@
 // <span id="text">Abracadabra!</span>
 
 
-const positionInput = document.querySelector("#font-size-control");
+const positionInput = document.querySelector(`#font-size-control`);
 console.dir(positionInput);
 console.log(positionInput.value);
 
 positionInput.addEventListener(`input`, () => {
-    const sizeContent = document.querySelector("#text");
+    const sizeContent = document.querySelector(`#text`);
     sizeContent.style.fontSize = `${Number(positionInput.value)}px`;
     console.log(positionInput.value);
     });
