@@ -24,13 +24,13 @@ const span = document.querySelector(`.color`);
 // console.log(span)
 
 const getRandomHexColor = () => {
-  return `#${Math.floor(Math.random() * 16777215)
+    return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
 };
 btn.addEventListener(`click`, () => {
-  getRandomHexColor();
-  span.textContent = `${getRandomHexColor()}`;
-  document.body.style.backgroundColor = `${getRandomHexColor()}`;
+    const colorBody = getRandomHexColor();
+    console.log(colorBody);
+    span.textContent = `${colorBody}`;
+    document.body.style.backgroundColor = `${colorBody}`;
 });
-

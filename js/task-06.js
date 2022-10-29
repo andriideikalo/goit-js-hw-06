@@ -29,14 +29,25 @@ const textInput = document.querySelector("#validation-input");
 // console.log(Number(textInput.getAttribute("data-length")))
 
 
-textInput.addEventListener(`blur`, () => {
-    if (textInput.value.length === Number(textInput.getAttribute("data-length"))) {
+// textInput.addEventListener(`blur`, () => {
+//     if (textInput.value.length === Number(textInput.getAttribute("data-length"))) {
+//         textInput.classList.add(`valid`);
+//         console.log(textInput.value.length === Number(textInput.getAttribute("data-length")))
+//     }
+//     textInput.classList.remove(`valid`);
+//     textInput.classList.add(`invalid`);
+//     console.log(textInput.value.length === Number(textInput.getAttribute("data-length")))
+
+// });
+textInput.addEventListener(`blur`, (event) => {
+    if (event.currentTarget.value.length === Number(textInput.dataset.length)) {
         textInput.classList.add(`valid`);
-        console.log(textInput.value.length === Number(textInput.getAttribute("data-length")))
+        textInput.classList.remove(`invalid`);
+        // console.log(event.currentTarget.value.length)
+        // console.log(Number(textInput.dataset.length))
     } else {
         textInput.classList.remove(`valid`);
         textInput.classList.add(`invalid`);
         console.log(textInput.value.length === Number(textInput.getAttribute("data-length")))
     }
-  });
-
+});

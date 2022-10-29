@@ -1,10 +1,10 @@
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+    'Potatoes',
+    'Mushrooms',
+    'Garlic',
+    'Tomatos',
+    'Herbs',
+    'Condiments',
 ];
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
@@ -16,10 +16,12 @@ const ingredients = [
 
 const addList = document.querySelector(`#ingredients`);
 
+const arr = [];
 for (let element of ingredients) {
-  const listItem = document.createElement(`li`);
-  listItem.classList.add(`item`);
-  listItem.textContent = `${element}`;
-  console.log(listItem);
-  addList.appendChild(listItem)
+    const listItem = document.createElement(`li`);
+    listItem.classList.add(`item`);
+    listItem.textContent = `${element}`;
+    arr.push(listItem);
+    console.log(listItem);
 }
+addList.append(...arr);
